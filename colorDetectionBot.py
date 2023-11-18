@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import time
 import pyautogui
-
+import sendWppMessage
 
 def process_screenshot():
     top = 70
@@ -35,9 +35,9 @@ def process_screenshot():
 
     # Check if light red is absent
     if cv2.countNonZero(mask_light_red) == 0:
-        print("Light red is not present.")
+        sendWppMessage.send_message("Dark red is present.")
     else:
-        print("Light red is present.")
+        sendWppMessage.send_message("Light red is present.")
 
     # Test image display
     cv2.imshow("Processed Image", mask_light_red)
