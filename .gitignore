@@ -1,3 +1,4 @@
 env.py
 PyWhatKit_DB.txt
 *png
+__pycache__/
